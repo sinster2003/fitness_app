@@ -1,13 +1,147 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans",sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color: #FFFAFB;
+    overflow-x: hidden;
+}
+
+.hero-banner-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 900px;
+    width: auto;
+    margin-top: -6rem;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 0 0 0 10rem;
+    animation: banner 0.75s linear forwards;  
+}
+
+.logo-img{
+    animation: logo 2s linear infinite;
+}
+
+.gif-img{
+    width: "600px"; 
+    height: "600px";
+}
+
+.main-tagline{
+    opacity: 0;
+    animation: tag 1s linear forwards 1s; 
+}
+
+.search-btn:hover{
+    background-color: #fc3939 !important;
+}
+
+.body-part-card:hover{
+    transform: scale(1.1,1.1);
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.exercise-button-card:hover{
+    color: "#000" !important;
+}
+
+.MuiOutlinedInput-root{
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+.video-link{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@keyframes banner {
+    0%{
+        transform: translateX(5rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes tag {
+    0%{
+        transform: translateX(-10rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes logo{
+    0%{
+        transform: translateY(-0.15rem);
+    }
+    25%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(0.15rem);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-0.15rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-stack{
+        justify-content: center;
+    }
+    .gif-img{
+        width: 300px !important;
+        height: 300px !important;
+    }
+    .video-img,.video-link{
+        width: 300px !important;
+        height: 190px !important;
+    }
+    .video-link{
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1280px) {
+    .hero-banner-img{
+        height: 600px;
+    }
+    .opacity-tagline{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .hero-banner-img{
+        display: none;
+    }
+    .navbar-stack{
+        justify-content: center;
+    }
+    .explore-box{
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px !important;
+    }
 }
